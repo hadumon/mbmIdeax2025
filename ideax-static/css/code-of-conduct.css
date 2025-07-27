@@ -1,16 +1,83 @@
+/* Ensure full viewport coverage */
+html, body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #041322 0%, #0A1A33 50%, #041322 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Override footer background for consistency */
+.footer-container {
+    background: linear-gradient(135deg, #041322 0%, #0A1A33 50%, #041322 100%);
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+    .page-wrapper {
+        padding: 100px 15px 60px;
+    }
+}
+
+/* Smooth scroll behavior for anchor links */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Ensure navigation is properly styled */
+.nav.scrolled {
+    background: rgba(4, 19, 34, 0.95);
+    backdrop-filter: blur(10px);
+}
+
 /* Code of Conduct Page Specific Styles */
 
-.page-wrapper {
+.page-background {
     background: linear-gradient(135deg, #041322 0%, #0A1A33 50%, #041322 100%);
+    width: 100vw;
+    min-height: 100vh;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    padding: 0;
+}
+
+.page-wrapper {
+    background: transparent; /* Remove duplicate background */
     color: white;
     padding: 120px 20px 80px;
-    min-height: 100vh;
+    min-height: calc(100vh - 200px);
     max-width: 900px;
     margin: 0 auto;
     line-height: 1.7;
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Animation for page load */
+.main-content:not(.loaded) .page-wrapper {
+    opacity: 0;
+    transform: translateY(20px);
 }
 
 .page-title {
+    font-family: 'Encode Sans Semi Condensed', sans-serif;
     font-size: 3.5rem;
     font-weight: 800;
     text-align: center;
@@ -21,9 +88,11 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    letter-spacing: 1px;
 }
 
 .page-paragraph {
+    font-family: 'Encode Sans Semi Condensed', sans-serif;
     font-size: 1.2rem;
     line-height: 1.8;
     margin-bottom: 2.5rem;
@@ -50,12 +119,14 @@
 }
 
 .section-subtitle {
+    font-family: 'Encode Sans Semi Condensed', sans-serif;
     font-size: 2rem;
     font-weight: 700;
     color: #6fa8c7;
     margin-bottom: 1.5rem;
     position: relative;
     padding-bottom: 0.5rem;
+    letter-spacing: 0.5px;
 }
 
 .section-subtitle::after {
@@ -70,6 +141,7 @@
 }
 
 .section-paragraph {
+    font-family: 'Encode Sans Semi Condensed', sans-serif;
     font-size: 1.1rem;
     line-height: 1.7;
     margin-bottom: 1.5rem;

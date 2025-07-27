@@ -1,26 +1,38 @@
 // Track data for the tracks section
 const trackData = [
     {
-        label: 'Mobile App',
-        icon: '<i class="fas fa-mobile-alt"></i>',
-        description: 'Build the mobile future with IdeaX. Explore native development, cross-platform solutions, and the future of handheld innovation.',
+        label: 'Healthcare',
+        icon: '<i class="fas fa-heartbeat"></i>',
+        description: 'Build tech that enhances lives through smarter, faster, and more accessible healthcare solutions.',
         reward: 'Rs. 10,000'
     },
     {
-        label: 'AI/ML',
-        icon: '<i class="fas fa-robot"></i>',
-        description: 'Innovate the intelligent future with IdeaX. Explore machine learning, deep neural networks, and the power of artificial intelligence.',
+        label: 'Fintech',
+        icon: '<i class="fas fa-coins"></i>',
+        description: 'Reimagine how people save, spend, lend, and grow wealth in a digital-first world.',
         reward: 'Rs. 10,000'
     },
     {
-        label: 'Web App',
-        icon: '<i class="fas fa-globe"></i>',
-        description: 'Build the web of tomorrow with IdeaX. Explore frameworks, user experiences, and the future of online interaction.',
+        label: 'Agrotech',
+        icon: '<i class="fas fa-seedling"></i>',
+        description: 'Empower farmers and food systems with sustainable, data-driven agricultural technology.',
+        reward: 'Rs. 10,000'
+    },
+    {
+        label: 'Travel and Tourism',
+        icon: '<i class="fas fa-plane"></i>',
+        description: 'Transform how we explore, discover, and experience places using immersive, intelligent tools.',
+        reward: 'Rs. 10,000'
+    },
+    {
+        label: 'Culture Tech',
+        icon: '<i class="fas fa-palette"></i>',
+        description: 'Explore the intersection of technology and culture. Innovate in areas like digital art, music tech, and cultural preservation.',
         reward: 'Rs. 10,000'
     },
     {
         label: 'Open',
-        icon: '<i class="fas fa-door-open"></i>',
+        icon: '<i class="fas fa-code-branch"></i>',
         description: 'Ignite collaboration with IdeaX. Explore open source, community-driven innovation, and the future of shared technology.',
         reward: 'Rs. 10,000'
     }
@@ -61,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // Navbar scroll effect
 window.addEventListener('scroll', function() {
     const navbar = document.getElementById('navbar');
-    if (window.scrollY >= 80) {
+    if (window.scrollY > 10) {
         navbar.classList.add('scrolled');
     } else {
         navbar.classList.remove('scrolled');
@@ -140,18 +152,18 @@ function toggleFAQ(element) {
     const allFAQItems = document.querySelectorAll('.faq-item');
     allFAQItems.forEach(item => {
         item.classList.remove('open');
-        const icon = item.querySelector('.icon');
+        const icon = item.querySelector('.icon i');
         if (icon) {
-            icon.textContent = '❓';
+            icon.className = 'fas fa-question-circle';
         }
     });
     
     // If this item wasn't open, open it
     if (!isOpen) {
         element.classList.add('open');
-        const icon = element.querySelector('.icon');
+        const icon = element.querySelector('.icon i');
         if (icon) {
-            icon.textContent = '✔️';
+            icon.className = 'fas fa-check-circle';
         }
     }
 }

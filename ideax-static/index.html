@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
     <title>MBMC IdeaX 2025 | Innovate • Build • Impact</title>
-    <meta name="description" content="Join the MBMC IdeaX a National Level Hackathon: 48 hours of innovation, coding, and collaboration to solve real-world challe    <!-- Sponsors Section -->
+    <meta name="description" content="Join the MBMC IdeaX a National Level Hackathon: 48 hours of innovation, coding, and collaboration to solve real-world challenges." />
     <meta name="summary" content="Register now for the MBMC IdeaX a National Level Hackathon. Build solutions, learn from mentors, compete for national recognition." />
     <meta name="keywords" content="hackathon,national hackathon,innovation challenge,coding competition,student hackathon,developers,event,technology" />
     <meta name="author" content="MBMC IdeaX Organizing Committee" />
@@ -13,6 +13,12 @@
     <meta name="googlebot" content="index,follow" />
     <meta name="theme-color" content="#041322" />
     <meta name="msapplication-TileColor" content="#041322" />
+    
+    <!-- Cache Control -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    
     <link rel="icon" type="image/png" size="48x48" href="images/favicon.png" />
     <link rel="shortcut icon" href="images/favicon.png" />
     <link rel="manifest" href="manifest.json" />
@@ -44,17 +50,49 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
     
     <!-- Custom CSS -->
-    <link href="css/styles.css" rel="stylesheet" />
+    <link href="css/styles.css?v=2025072602" rel="stylesheet" />
+    <link href="intro-animation.css?v=2025072602" rel="stylesheet" />
 </head>
 
 <body>
+    <!-- Intro Animation Overlay -->
+    <div id="intro-overlay" class="intro-overlay">
+        <!-- Loading Screen -->
+        <div id="loading-container" class="loading-container">
+            <div class="loading-text">Loading Experience...</div>
+            <div class="loading-bar-container">
+                <div id="loading-bar" class="loading-bar"></div>
+            </div>
+        </div>
+        
+        <!-- Logo Display -->
+        <div id="intro-logo" class="intro-logo">
+            <img src="static/media/ideax_x_only.c63eef2ea1d1418649d9fd26da700b1e.svg" alt="IdeaX Logo" class="logo-image" />
+        </div>
+        
+        <!-- X-Gate Panels -->
+        <div id="gate-left" class="gate-panel gate-left">
+            <div class="gate-content">
+                <div class="gate-text">INNO</div>
+                <div class="gate-text">VATE</div>
+            </div>
+        </div>
+        <div id="gate-right" class="gate-panel gate-right">
+            <div class="gate-content">
+                <div class="gate-text">BUILD</div>
+                <div class="gate-text">IMPACT</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content">
     <!-- Mobile Sidebar -->
     <div id="sidebar" class="sidebar">
         <div class="sidebar-wrapper">
             <div class="sidebar-menu">
                 <a href="#about" class="sidebar-link">About</a>
                 <a href="#participation" class="sidebar-link">Participation</a>
-                <a href="#tracks" class="sidebar-link">Tracks</a>
+                <a href="#tracks" class="sidebar-link">Themes</a>
                 <a href="#faq" class="sidebar-link">FAQ</a>
                 <a href="code-of-conduct.html" class="sidebar-link">Code Of Conduct</a>
                 <div class="sidebar-dropdown">
@@ -90,7 +128,7 @@
                     <a href="#participation" class="nav-links">Participation</a>
                 </div>
                 <div class="nav-item">
-                    <a href="#tracks" class="nav-links">Tracks</a>
+                    <a href="#tracks" class="nav-links">Themes</a>
                 </div>
                 <div class="nav-item">
                     <a href="#faq" class="nav-links">FAQ</a>
@@ -135,8 +173,8 @@
                         <i class="fab fa-discord"></i>
                         Join Our Discord
                     </a>
-                </div>
-                
+                </div>  
+                <p class="subtext-date">31st Oct - 02 Nov</p>
                 <p class="subtext">Innovation begins with you!</p>
             </div>
         </div>
@@ -224,37 +262,45 @@
         </div>
     </section>
     
-    <!-- Tracks Section -->
+    <!-- Themes Section -->
     <section id="tracks">
         <div class="tracks-container">
-            <h2 class="track-title">Tracks</h2>
+            <h2 class="track-title">Themes</h2>
             
             <div class="tabs-wrapper">
                 <button class="tab active" data-track="0">
-                    <i class="fas fa-mobile-alt"></i>
-                    <span class="tab-label">Mobile App</span>
+                    <i class="fas fa-heartbeat"></i>
+                    <span class="tab-label">Healthcare</span>
                 </button>
                 <button class="tab" data-track="1">
-                    <i class="fas fa-robot"></i>
-                    <span class="tab-label">AI/ML</span>
+                    <i class="fas fa-coins"></i>
+                    <span class="tab-label">Fin-tech</span>
                 </button>
                 <button class="tab" data-track="2">
-                    <i class="fas fa-globe"></i>
-                    <span class="tab-label">Web App</span>
+                    <i class="fas fa-seedling"></i>
+                    <span class="tab-label">Agro-tech</span>
                 </button>
                 <button class="tab" data-track="3">
-                    <i class="fas fa-door-open"></i>
-                    <span class="tab-label">Open</span>
+                    <i class="fas fa-plane"></i>
+                    <span class="tab-label">Travel & Tourism</span>
                 </button>
+                <button class="tab" data-track="4">
+                    <i class="fas fa-palette"></i>
+                    <span class="tab-label">Culture Tech</span>
+                </button>
+                <button class="tab" data-track="5">
+                    <i class="fas fa-code-branch"></i>
+                    <span class="tab-label">Open</span>
+                </button>             
             </div>
             
             <div class="content-card">
                 <div class="track-content">
                     <div class="icon-circle">
-                        <i class="fas fa-mobile-alt"></i>
+                        <i class="fas fa-heartbeat"></i>
                     </div>
-                    <h3 class="track-content-title">Mobile App</h3>
-                    <p class="track-description">Build the mobile future with IdeaX. Explore native development, cross-platform solutions, and the future of handheld innovation.</p>
+                    <h3 class="track-content-title">Healthcare</h3>
+                    <p class="track-description">Build tech that enhances lives through smarter, faster, and more accessible healthcare solutions.</p>
                 </div>
                 <div class="reward-box">
                     <p>WINNER GETS</p>
@@ -369,7 +415,7 @@
                 <div class="card-inner">
                     <div class="card-front">
                         <div class="question-row">
-                            <div class="icon">❓</div>
+                            <div class="icon"><i class="fas fa-question-circle"></i></div>
                             <div class="question-text">What is MBMC IdeaX?</div>
                         </div>
                     </div>
@@ -383,7 +429,7 @@
                 <div class="card-inner">
                     <div class="card-front">
                         <div class="question-row">
-                            <div class="icon">❓</div>
+                            <div class="icon"><i class="fas fa-question-circle"></i></div>
                             <div class="question-text">Who can participate in IdeaX?</div>
                         </div>
                     </div>
@@ -397,7 +443,7 @@
                 <div class="card-inner">
                     <div class="card-front">
                         <div class="question-row">
-                            <div class="icon">❓</div>
+                            <div class="icon"><i class="fas fa-question-circle"></i></div>
                             <div class="question-text">Do I need to have a team to participate?</div>
                         </div>
                     </div>
@@ -411,7 +457,7 @@
                 <div class="card-inner">
                     <div class="card-front">
                         <div class="question-row">
-                            <div class="icon">❓</div>
+                            <div class="icon"><i class="fas fa-question-circle"></i></div>
                             <div class="question-text">What is the registration process and deadline?</div>
                         </div>
                     </div>
@@ -425,7 +471,7 @@
                 <div class="card-inner">
                     <div class="card-front">
                         <div class="question-row">
-                            <div class="icon">❓</div>
+                            <div class="icon"><i class="fas fa-question-circle"></i></div>
                             <div class="question-text">Are there any registration or participation fees?</div>
                         </div>
                     </div>
@@ -439,7 +485,7 @@
                 <div class="card-inner">
                     <div class="card-front">
                         <div class="question-row">
-                            <div class="icon">❓</div>
+                            <div class="icon"><i class="fas fa-question-circle"></i></div>
                             <div class="question-text">What is the format and duration of the hackathon?</div>
                         </div>
                     </div>
@@ -502,8 +548,8 @@
                 <div class="footer-column event-summary">
                     <h2>Event Summary</h2>
                     <p>Mode: In-person</p>
-                    <p>Venue: Madan Bhandari College</p>
-                    <p>Date: 01th July, 2025</p>
+                    <p>Venue: Madan Bhandari Memorial College</p>
+                    <p>Date: 31st Oct to 02nd Nov, 2025</p>
                 </div>
             </div>
             <div class="website-rights">
@@ -519,6 +565,8 @@
     <!-- Slick Carousel -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <!-- Custom JavaScript -->
-    <script src="js/scripts.js"></script>
+    <script src="js/scripts.js?v=2025072602"></script>
+    <script src="intro-animation.js?v=2025072602"></script>
+    </div> <!-- Close main-content -->
 </body>
 </html>

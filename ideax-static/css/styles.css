@@ -114,8 +114,7 @@ html {
 
 /* Navigation */
 .nav {
-    background: linear-gradient(180deg, #041322 0%, rgba(4, 19, 34, 0.95) 100%);
-    backdrop-filter: blur(10px);
+    background: transparent;
     height: 80px;
     display: flex;
     justify-content: center;
@@ -127,12 +126,10 @@ html {
     right: 0;
     z-index: 999;
     transition: all 0.3s ease;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .nav.scrolled {
-    background: linear-gradient(180deg, #041322 0%, rgba(4, 19, 34, 0.98) 100%);
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+    background: rgba(4, 19, 34, 0.9);
 }
 
 .nav-container {
@@ -142,8 +139,7 @@ html {
     height: 80px;
     z-index: 1;
     width: 100%;
-    padding: 0 24px;
-    max-width: 1100px;
+    padding: 0 40px;
 }
 
 .nav-logo {
@@ -153,7 +149,7 @@ html {
     font-size: 1.5rem;
     display: flex;
     align-items: center;
-    margin-left: 24px;
+    margin-left: 0;
     font-weight: bold;
     text-decoration: none;
 }
@@ -172,7 +168,10 @@ html {
     align-items: center;
     list-style: none;
     text-align: center;
-    margin-right: -22px;
+    margin-right: 0;
+    flex: 1;
+    justify-content: center;
+    gap: 2rem;
 }
 
 .nav-item {
@@ -185,9 +184,17 @@ html {
     display: flex;
     align-items: center;
     text-decoration: none;
-    padding: 0 1rem;
+    padding: 0 1.5rem;
     height: 100%;
     cursor: pointer;
+    font-family: "Encode Sans Semi Expanded", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-variant-caps: normal;
+    font-variant-east-asian: normal;
+    font-variant-ligatures: normal;
+    font-variant-numeric: normal;
+    font-weight: 400;
 }
 
 .nav-links:hover {
@@ -200,8 +207,16 @@ html {
     display: flex;
     align-items: center;
     text-decoration: none;
-    padding: 0 1rem;
+    padding: 0 1.5rem;
     height: 100%;
+    font-family: "Encode Sans Semi Expanded", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-variant-caps: normal;
+    font-variant-east-asian: normal;
+    font-variant-ligatures: normal;
+    font-variant-numeric: normal;
+    font-weight: 400;
 }
 
 .nav-router-link:hover {
@@ -224,7 +239,15 @@ html {
     border: none;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
-    margin-left: 24px;
+    margin-left: 0;
+    font-family: "Encode Sans Semi Expanded", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-variant-caps: normal;
+    font-variant-east-asian: normal;
+    font-variant-ligatures: normal;
+    font-variant-numeric: normal;
+    font-weight: 400;
 }
 
 .nav-btn-link:hover {
@@ -367,8 +390,27 @@ html {
 .subtext {
     margin-top: 1rem;
     font-size: 1rem;
-    color: #a78bfa;
+    color: #ffff;
     text-align: center;
+    text-shadow: 0 0 8px rgba(167, 139, 250, 0.8),
+                 0 0 16px rgba(167, 139, 250, 0.6),
+                 0 0 24px rgba(167, 139, 250, 0.4),
+                 0 0 32px rgba(167, 139, 250, 0.3);
+    font-weight: 500;
+    animation: subtextGlow 3s ease-in-out infinite alternate;
+}
+
+.subtext-date {
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: white;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
+                 0 0 20px rgba(255, 255, 255, 0.6),
+                 0 0 30px rgba(255, 255, 255, 0.4),
+                 0 0 40px rgba(168, 139, 250, 0.5);
+    font-weight: 600;
+    /* animation: glow 2s ease-in-out infinite alternate; */
 }
 
 /* Shape Divider */
@@ -380,6 +422,38 @@ html {
     overflow: hidden;
     line-height: 0;
     z-index: 5;
+}
+
+/* Glow animation for subtext-date */
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
+                     0 0 20px rgba(255, 255, 255, 0.6),
+                     0 0 30px rgba(255, 255, 255, 0.4),
+                     0 0 40px rgba(168, 139, 250, 0.5);
+    }
+    to {
+        text-shadow: 0 0 15px rgba(255, 255, 255, 1),
+                     0 0 25px rgba(255, 255, 255, 0.8),
+                     0 0 35px rgba(255, 255, 255, 0.6),
+                     0 0 45px rgba(168, 139, 250, 0.7);
+    }
+}
+
+/* Glow animation for subtext */
+@keyframes subtextGlow {
+    from {
+        text-shadow: 0 0 8px rgba(167, 139, 250, 0.8),
+                     0 0 16px rgba(167, 139, 250, 0.6),
+                     0 0 24px rgba(167, 139, 250, 0.4),
+                     0 0 32px rgba(167, 139, 250, 0.3);
+    }
+    to {
+        text-shadow: 0 0 12px rgba(167, 139, 250, 1),
+                     0 0 20px rgba(167, 139, 250, 0.8),
+                     0 0 28px rgba(167, 139, 250, 0.6),
+                     0 0 36px rgba(167, 139, 250, 0.5);
+    }
 }
 
 .desktop-shape {
@@ -977,11 +1051,12 @@ html {
     overflow: hidden;
     cursor: pointer;
     background: #0E4E7B;
-    transition: all 0.3s ease;
+    transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .faq-item:hover {
     background: #1a5a8a;
+    transform: translateY(-2px);
 }
 
 .card-inner {
@@ -1000,6 +1075,7 @@ html {
     background: transparent;
     color: white;
     display: block;
+    transition: opacity 0.3s ease;
 }
 
 .card-back {
@@ -1015,6 +1091,11 @@ html {
 
 .faq-item.open .card-back {
     display: block;
+    animation: slideIn 0.3s ease;
+}
+
+.faq-item.open .card-inner {
+    min-height: auto;
 }
 
 .question-row {
@@ -1028,6 +1109,11 @@ html {
     font-size: 1.5rem;
     min-width: 30px;
     flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.faq-item.open .icon {
+    transform: rotate(90deg);
 }
 
 .question-text {
@@ -1043,6 +1129,17 @@ html {
     word-wrap: break-word;
     overflow-wrap: break-word;
     max-width: 100%;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Sponsors Section */
