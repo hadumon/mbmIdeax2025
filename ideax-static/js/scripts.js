@@ -580,3 +580,86 @@ document.addEventListener('DOMContentLoaded', function() {
         sectionObserver.observe(section);
     });
 });
+
+// Notice Popup Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const noticePopup = document.getElementById('notice-popup');
+    const closeNoticeBtn = document.getElementById('close-notice');
+    
+    // Ensure popup is hidden initially
+    if (noticePopup) {
+        noticePopup.style.display = 'none';
+        noticePopup.style.position = 'fixed';
+        noticePopup.style.left = '-9999px';
+        noticePopup.style.top = '-9999px';
+        noticePopup.classList.remove('show');
+    }
+    
+    // Show popup after a delay on every page load
+    setTimeout(() => {
+        showNoticePopup();
+    }, 1500); // Show after 1.5 seconds
+    
+    // Close button functionality
+    if (closeNoticeBtn) {
+        closeNoticeBtn.addEventListener('click', function() {
+            hideNoticePopup();
+        });
+    }
+    
+    // Close on overlay click
+    if (noticePopup) {
+        noticePopup.addEventListener('click', function(e) {
+            if (e.target === noticePopup) {
+                hideNoticePopup();
+            }
+        });
+    }
+    
+    // Close on Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && noticePopup && noticePopup.classList.contains('show')) {
+            hideNoticePopup();
+        }
+    });
+    
+    function showNoticePopup() {
+        if (noticePopup) {
+            noticePopup.style.position = 'fixed';
+            noticePopup.style.left = '0';
+            noticePopup.style.top = '0';
+            noticePopup.style.display = 'flex';
+            setTimeout(() => {
+                noticePopup.classList.add('show');
+            }, 10);
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+            
+            // Track popup view
+            if (typeof trackEvent === 'function') {
+                trackEvent('Notice Popup', 'view', 'Notice Shown');
+            }
+        }
+    }
+    
+    function hideNoticePopup() {
+        if (noticePopup) {
+            noticePopup.classList.remove('show');
+            setTimeout(() => {
+                noticePopup.style.display = 'none';
+                noticePopup.style.position = 'absolute';
+                noticePopup.style.left = '-9999px';
+                noticePopup.style.top = '-9999px';
+            }, 300);
+            document.body.style.overflow = ''; // Restore scrolling
+            
+            // Track popup close
+            if (typeof trackEvent === 'function') {
+                trackEvent('Notice Popup', 'close', 'Notice Closed');
+            }
+        }
+    }
+    
+    // Global functions for manual control
+    window.showNoticePopup = showNoticePopup;
+    window.hideNoticePopup = hideNoticePopup;
+});
